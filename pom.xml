@@ -42,7 +42,8 @@
 
     </properties>
     <build>
-    	<testSourceDirectory>src</testSourceDirectory>
+    	<sourceDirectory>src</sourceDirectory>
+    	<testSourceDirectory>src/test</testSourceDirectory>
         <plugins>
             <plugin>
                 <groupId>org.jacoco</groupId>
