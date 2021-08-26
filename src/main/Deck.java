@@ -101,7 +101,7 @@ public class Deck extends Game {
 
 	public static Card hit() {
 		int index = randomGenerator.nextInt(deck.size());
-		if (index <= 0)
+		if (index < 0)
 			throw new IllegalArgumentException("bound must be positive");
 		else {
 

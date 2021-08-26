@@ -12,7 +12,7 @@ public class Dealer extends Game {
 		dealerHand.add(Deck.hit());
 	}
 
-	public static void dealerTurn() {
+	public static void dealerDraw() {
 		Card draw = Deck.hit();
 		dealerHand.add(draw);
 		System.out.println("Dealer drew the " + draw.getValue() + " of " + draw.getSuit());
@@ -27,7 +27,6 @@ public class Dealer extends Game {
 			}
 		}
 
-		System.out.println("Deakers cards now equal " + getTotal());
 	}
 
 	public static int dealerSize() {
@@ -44,6 +43,13 @@ public class Dealer extends Game {
 				total = total + 10;
 			} else if (c.getValue().equals("King")) {
 				total = total + 10;
+			} else if (c.getValue().equals("Ace")) {
+				if (total <= 10) {
+					c.setValue("11");
+				} else if (total > 10) {
+					c.setValue("1");
+				}
+				total = total + Integer.parseInt(c.getValue());
 			} else
 				total = total + Integer.parseInt(c.getValue());
 		}

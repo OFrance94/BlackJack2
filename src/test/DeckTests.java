@@ -1,5 +1,6 @@
 package test;
 
+import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.AfterEach;
@@ -8,6 +9,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import main.Deck;
 import main.Player;
+import main.Dealer;
 
 public class DeckTests {
 
@@ -23,11 +25,11 @@ public class DeckTests {
 	void deleteDeck() {
 		Deck.removeAll();
 	}
+
 	@Test
 	@DisplayName("Ensures the deck is created properly")
 	void testDeck() {
 		assertEquals(52, Deck.deckSize(), "The deck is not being created");
-
 
 	}
 
@@ -37,20 +39,18 @@ public class DeckTests {
 		Deck.hit();
 		assertEquals(51, Deck.deckSize(), "The deck is not lowering in size");
 
-
 	}
 
 	@Test
 	@DisplayName("Dealer and Player should start with 2 cards")
 	void testHands() {
-
+		Dealer.addCard();
+		Dealer.addCard();
 		Player.addCard();
 		Player.addCard();
 
-		assertEquals(2, Player.playerSize(), "The player doesn't have two cards");
+		assertAll("Hand sizes", () -> assertEquals(2, Player.playerSize()), () -> assertEquals(2, Dealer.dealerSize()));
 
 	}
-
-
 
 }
