@@ -43,7 +43,7 @@
     </properties>
     <build>
     	<sourceDirectory>src</sourceDirectory>
-    	<testSourceDirectory>src/test</testSourceDirectory>
+    	<testSourceDirectory>test</testSourceDirectory>
         <plugins>
             <plugin>
                 <groupId>org.jacoco</groupId>
