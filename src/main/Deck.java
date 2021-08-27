@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Deck extends Game {
-	static ArrayList<Card> deck = new ArrayList<>();
+	public static ArrayList<Card> deck = new ArrayList<>();
 	private static Random randomGenerator = new Random();
 
 	public static void createDeck() {
@@ -111,8 +111,5 @@ public class Deck extends Game {
 		}
 	}
 
-	public static void removeAll() {
-		deck.removeAll(deck);
-	}
 
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="test.DeckTests" time="0.114" tests="3" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="test.DeckTests" time="0.166" tests="7" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="16"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="GB"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-16.0.2\bin"/>
-    <property name="sun.java.command" value="C:\Users\Big O\AppData\Local\Temp\surefire11402013652264061363\surefirebooter6729356156992568499.jar C:\Users\Big O\AppData\Local\Temp\surefire11402013652264061363 2021-08-26T17-40-17_169-jvmRun1 surefire7388312253667073362tmp surefire_03327685918188595520tmp"/>
+    <property name="sun.java.command" value="C:\Users\Big O\AppData\Local\Temp\surefire1998789466508461764\surefirebooter17820189008022236569.jar C:\Users\Big O\AppData\Local\Temp\surefire1998789466508461764 2021-08-27T14-06-23_299-jvmRun1 surefire17579649249949655376tmp surefire_04188188819158272898tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\Big O\eclipse-workspace\BlackJack\target\test-classes;C:\Users\Big O\eclipse-workspace\BlackJack\target\classes;C:\Users\Big O\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.6.0\junit-jupiter-api-5.6.0.jar;C:\Users\Big O\.m2\repository\org\apiguardian\apiguardian-api\1.1.0\apiguardian-api-1.1.0.jar;C:\Users\Big O\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\Big O\.m2\repository\org\junit\platform\junit-platform-commons\1.6.0\junit-platform-commons-1.6.0.jar;C:\Users\Big O\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.6.0\junit-jupiter-params-5.6.0.jar;C:\Users\Big O\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.6.0\junit-jupiter-engine-5.6.0.jar;C:\Users\Big O\.m2\repository\org\junit\platform\junit-platform-engine\1.6.0\junit-platform-engine-1.6.0.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\Big O\AppData\Local\Temp\surefire11402013652264061363\surefirebooter6729356156992568499.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\Big O\AppData\Local\Temp\surefire1998789466508461764\surefirebooter17820189008022236569.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="16.0.2+7-67"/>
@@ -55,7 +55,23 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="60.0"/>
   </properties>
-  <testcase name="testHands" classname="test.DeckTests" time="0.068"/>
-  <testcase name="testDeck" classname="test.DeckTests" time="0.001"/>
-  <testcase name="testHitDeck" classname="test.DeckTests" time="0.001"/>
+  <testcase name="testHands" classname="test.DeckTests" time="0.066"/>
+  <testcase name="testStart" classname="test.DeckTests" time="0.005">
+    <system-out><![CDATA[Welcome to BlackJack! Starting with 52The rules are simple, keep your hand to at max 21 in value! You start with two cards, 
+and can then choose to stick with them or draw another card. Score closer to 21 than the dealer and you win!
+Jack, Queen and King are 10, and Aces can be either 1 or 11, your choice.
+]]></system-out>
+  </testcase>
+  <testcase name="testDeck" classname="test.DeckTests" time="0.009"/>
+  <testcase name="testHitDeck" classname="test.DeckTests" time="0.002"/>
+  <testcase name="testDealerBust" classname="test.DeckTests" time="0.005"/>
+  <testcase name="testDealerDraw" classname="test.DeckTests" time="0.03">
+    <system-out><![CDATA[Dealer drew the King of Diamonds
+]]></system-out>
+  </testcase>
+  <testcase name="testPlayerBust" classname="test.DeckTests" time="0.004">
+    <system-out><![CDATA[You drew the 2 of Clubs
+Your cards now equal 29
+]]></system-out>
+  </testcase>
 </testsuite>

@@ -5,10 +5,10 @@ import java.util.Scanner;
 
 public class Game {
 	public static ArrayList<Card> playerHand = new ArrayList<>();
-	static ArrayList<Card> dealerHand = new ArrayList<>();
+	public static ArrayList<Card> dealerHand = new ArrayList<>();
 	static Scanner playerInput = new Scanner(System.in);
 	public static boolean playerBust = false;
-	static boolean dealerBust = false;
+	public static boolean dealerBust = false;
 	static String keepPlaying = "y";
 	// static int money = 500; //use a loop to keep playing and change money amount
 
@@ -55,11 +55,10 @@ public class Game {
 			}
 
 		}
-		if (Player.getTotal() > 21) {
-			playerBust = true;
+		isPlayerBust();
 			// money = money/2;
 			// System.out.println("You now have " + money + " pounds.");
-		} else if (Player.getTotal() == 21) {
+		if (Player.getTotal() == 21) {
 			System.out.println("21! Well done!");
 		} else if (Player.getTotal() < 21) {
 			System.out.println("Okay, now for the dealer's turn.");
@@ -70,12 +69,11 @@ public class Game {
 	public static void dealerTurn() {
 		while (Dealer.getTotal() <= 16) {
 			Dealer.dealerDraw();
-			if (Dealer.getTotal() > 21) {
-				dealerBust = true;
-				break;
-			}
 		}
+		isDealerBust();
+		if(!(isDealerBust() == true)) {
 		System.out.println("Deakers cards now equal " + Dealer.getTotal());
+		}
 	}
 
 	public static void finalResult() {
@@ -94,5 +92,18 @@ public class Game {
 				// System.out.println("You now have " + money + " pounds.");
 			}
 		}
+	}
+	
+	public static boolean isPlayerBust() {
+		if (Player.getTotal() > 21) {
+			playerBust = true;
+		}
+		return playerBust;
+	}
+	public static boolean isDealerBust() {
+		if (Dealer.getTotal() > 21) {
+			dealerBust = true;
+		}
+		return dealerBust;
 	}
 }
