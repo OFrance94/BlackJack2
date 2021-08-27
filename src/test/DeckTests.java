@@ -86,15 +86,7 @@ public class DeckTests {
 
 	}
 	
-	@Test
-	@DisplayName("Check if starting game gives player and dealer 2 cards")
-	void testStart(){
-		Game.startGame();
-		
-		assertAll("Should give both player and dealer 2 cards", () -> assertEquals(2, Player.playerSize()), () -> assertEquals(2, Dealer.dealerSize()));
-		
-	}
-	
+
 	@Test
 	@DisplayName("Check if dealer is drawing cards correctly")
 	void testDealerDraw() {
